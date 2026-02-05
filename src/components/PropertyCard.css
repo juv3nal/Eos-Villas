@@ -247,6 +247,46 @@
     margin-top: 2px;
 }
 
+/* Last Minute Specific Styles */
+.badge-last-minute {
+    background: #ef4444 !important;
+    /* Urgent red */
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+    font-weight: 900;
+}
+
+.price-tag-last-minute {
+    padding: 0.75rem 1.25rem !important;
+    background: #fff7ed !important;
+    /* Light peach/orange background for highlight */
+    border: 1px solid #ffedd5;
+}
+
+.price-was {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    opacity: 0.8;
+    margin-bottom: -2px;
+}
+
+.price-main {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+}
+
+.price-min-stay {
+    font-size: 0.65rem;
+    color: #9a3412;
+    /* Deep orange */
+    font-weight: 700;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
 .details-link {
     font-size: 0.9rem;
     font-weight: 700;

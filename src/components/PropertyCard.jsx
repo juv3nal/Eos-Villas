@@ -3,7 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { Users, Bed, Bath, Star, MapPin, Award, BookOpen, Leaf, ShieldCheck } from 'lucide-react'
 import './PropertyCard.css'
 
-const PropertyCard = ({ id, name, location, price, guests, bedrooms, bathrooms, rating = 5.0, image, badges = [] }) => {
+const PropertyCard = ({
+    id, name, location, price, guests, bedrooms, bathrooms, rating = 5.0, image, badges = [],
+    lastMinute = false, discountPercent, originalPrice, offerEndsAt, minNights
+}) => {
     const navigate = useNavigate();
 
     const handleCardClick = () => {
@@ -27,6 +30,12 @@ const PropertyCard = ({ id, name, location, price, guests, bedrooms, bathrooms, 
                 <div className="property-image">
                     <img src={image} alt={name} loading="lazy" />
                     <div className="property-badges">
+                        {lastMinute && (
+                            <span className="badge badge-last-minute">
+                                <Award size={14} style={{ marginRight: '4px' }} />
+                                -{discountPercent}% Last Minute
+                            </span>
+                        )}
                         {(badges || []).map(badge => {
                             const badgeSlug = badge.toLowerCase().replace(/\s+/g, '-');
                             return (
@@ -38,10 +47,18 @@ const PropertyCard = ({ id, name, location, price, guests, bedrooms, bathrooms, 
                         })}
                     </div>
 
-                    <div className="price-tag">
-                        <span className="price-label">from</span>
-                        <span className="price-amount">€{price}</span>
-                        <span className="price-period">/night</span>
+                    <div className={`price-tag ${lastMinute ? 'price-tag-last-minute' : ''}`}>
+                        {lastMinute && originalPrice && (
+                            <span className="price-was">Was €{originalPrice}</span>
+                        )}
+                        <div className="price-main">
+                            <span className="price-label">{lastMinute ? 'Now' : 'from'}</span>
+                            <span className="price-amount">€{price}</span>
+                            <span className="price-period">/night</span>
+                        </div>
+                        {lastMinute && minNights && (
+                            <span className="price-min-stay">Min. {minNights} nights</span>
+                        )}
                     </div>
                 </div>
 
@@ -75,7 +92,7 @@ const PropertyCard = ({ id, name, location, price, guests, bedrooms, bathrooms, 
 
                     <div className="card-footer">
                         <div className="details-link">
-                            Discover
+                            {lastMinute ? 'View offer' : 'Discover'}
                         </div>
                     </div>
                 </div>

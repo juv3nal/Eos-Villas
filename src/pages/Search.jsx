@@ -9,7 +9,9 @@ import './Search.css'
 
 function Search() {
     const { search } = useLocation();
-    const query = new URLSearchParams(search).get('q')?.toLowerCase() || '';
+    const queryParams = new URLSearchParams(search);
+    const query = queryParams.get('q')?.toLowerCase() || '';
+    const showLastMinuteOnly = queryParams.get('lastMinute') === 'true';
 
     const [filters, setFilters] = useState({
         types: [],
@@ -39,6 +41,11 @@ function Search() {
                 p.location.toLowerCase().includes(query) ||
                 p.type.toLowerCase().includes(query)
             );
+        }
+
+        // Apply Last Minute Filter
+        if (showLastMinuteOnly) {
+            results = results.filter(p => p.lastMinute === true);
         }
 
         // Apply Filters
@@ -78,7 +85,7 @@ function Search() {
                 <header className="search-header">
                     <div className="search-info">
                         <h1>
-                            {query ? `Results for "${query}"` : 'All Properties'}
+                            {showLastMinuteOnly ? 'Last Minute Offers' : (query ? `Results for "${query}"` : 'All Properties')}
                         </h1>
                         <p className="results-count">
                             {filteredResults.length} {filteredResults.length === 1 ? 'property' : 'properties'} found

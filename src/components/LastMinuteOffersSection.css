@@ -1,0 +1,113 @@
+.last-minute-section {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, #fff7ed, #fff);
+    /* Soft warm gradient */
+    border-top: 1px solid #ffedd5;
+    border-bottom: 1px solid #ffedd5;
+}
+
+.section-header-last-minute {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    padding: 0 1rem;
+}
+
+.urgency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.section-header-last-minute .section-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.section-header-last-minute .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.urgency-microcopy {
+    display: block;
+    font-size: 0.9rem;
+    color: #9a3412;
+    font-weight: 600;
+    margin-top: 0.25rem;
+    opacity: 0.8;
+}
+
+.view-all-offers {
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.view-all-offers:hover {
+    color: var(--secondary);
+    transform: translateX(5px);
+}
+
+.offers-container {
+    width: 100%;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+/* Mobile: Horizontal scroll on mobile as requested */
+@media (max-width: 992px) {
+    .offers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        overflow-x: auto;
+        padding: 1rem 1rem 2rem;
+        margin: 0 -1rem;
+        scroll-snap-type: x mandatory;
+        gap: 1.5rem;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .offers-grid::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari and Opera */
+    }
+
+    .offers-grid>* {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
+    }
+
+    .section-header-last-minute {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-header-last-minute .section-title {
+        font-size: 2rem;
+    }
+}

@@ -13,6 +13,11 @@ export const properties = [
         image: "https://www.eostravel.com/images/14998/Local/thumbs/32678.jpg",
         type: "Villa",
         amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false },
+        lastMinute: true,
+        originalPrice: 245,
+        discountPercent: 20,
+        offerEndsAt: "2026-03-05",
+        minNights: 5,
         description: "A beautiful traditional villa located in the heart of Saint Stephanos, offering stunning sea views and modern amenities. Perfect for families looking for a relaxing getaway near the Ionian Sea."
     },
     {
@@ -30,6 +35,11 @@ export const properties = [
         type: "Apartment",
         bookingsCount: 5,
         amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false },
+        lastMinute: true,
+        originalPrice: 190,
+        discountPercent: 15,
+        offerEndsAt: "2026-02-28",
+        minNights: 3,
         description: "Modern eco-friendly apartment with a private pool and spacious terrace. Located in the quiet village of Kavvadades, it provides the perfect balance of comfort and sustainability."
     },
     {
@@ -47,6 +57,11 @@ export const properties = [
         type: "House",
         bookingsCount: 42,
         amenities: { wifi: true, pool: false, ac: true, parking: false, waterfront: false, pets: false },
+        lastMinute: true,
+        originalPrice: 305,
+        discountPercent: 20,
+        offerEndsAt: "2026-03-15",
+        minNights: 4,
         description: "A historic mansion in the heart of Corfu Town. Experience the elegance of Venetian architecture combined with modern luxury. Just steps away from the Liston and Spianada."
     },
     {
@@ -133,6 +148,11 @@ export const properties = [
         image: "https://www.eostravel.com/images/15202/Local/thumbs/28883.jpg",
         type: "Villa",
         amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false },
+        lastMinute: true,
+        originalPrice: 105,
+        discountPercent: 22,
+        offerEndsAt: "2026-02-20",
+        minNights: 3,
         description: "Cozy Paxian villa nestled among olive groves. Enjoy peace and tranquility just a short drive from the harbor of Gaios."
     },
     {
@@ -326,6 +346,11 @@ export const properties = [
         image: "https://www.eostravel.com/images/15426/Local/thumbs/37875.jpg",
         type: "Villa",
         amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: true },
+        lastMinute: true,
+        originalPrice: 215,
+        discountPercent: 20,
+        offerEndsAt: "2026-03-10",
+        minNights: 5,
         description: "A beautiful villa in Competa with mountain views and a private pool. Perfect for a relaxing family holiday."
     },
     {
@@ -375,6 +400,11 @@ export const properties = [
         image: "https://www.eostravel.com/images/13561/Main/thumbs/majestic_cy_prfl.jpg",
         type: "Villa",
         amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: true },
+        lastMinute: true,
+        originalPrice: 120,
+        discountPercent: 20,
+        offerEndsAt: "2026-03-01",
+        minNights: 7,
         description: "Villa Majestic is a perfect place for a family holiday. Located in Agia Marina, it offers beautiful views and modern comforts."
     },
     {

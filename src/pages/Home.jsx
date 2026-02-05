@@ -10,6 +10,7 @@ import { destinations } from '../data/destinations'
 import { reviews } from '../data/reviews'
 import TrustBadges from '../components/TrustBadges'
 import LocalExperience from '../components/LocalExperience'
+import LastMinuteOffersSection from '../components/LastMinuteOffersSection'
 import './Home.css'
 
 const HERO_IMAGES = [
@@ -42,6 +43,10 @@ function Home() {
         return [...destinations].sort(() => 0.5 - Math.random()).slice(0, 3);
     }, []);
 
+    const lastMinuteProperties = useMemo(() => {
+        return properties.filter(p => p.lastMinute === true);
+    }, []);
+
     const randomizedImages = useMemo(() => {
         // Create a copy of the array and shuffle it
         const shuffled = [...HERO_IMAGES].sort(() => 0.5 - Math.random());
@@ -51,6 +56,9 @@ function Home() {
     return (
         <div className="home-page">
             <Hero images={randomizedImages} />
+
+            {/* Last Minute Escapes */}
+            <LastMinuteOffersSection properties={lastMinuteProperties} />
 
             {/* Why Choose Eos - Trust Section */}
             <section className="container section" style={{ padding: '6rem 2rem' }}>
