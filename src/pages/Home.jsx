@@ -62,10 +62,10 @@ function Home() {
             <LastMinuteOffersSection properties={lastMinuteProperties} />
 
             {/* Why Choose Eos - Trust Section */}
-            <section className="container section" style={{ padding: '6rem 2rem' }}>
-                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                    <span className="section-subtitle" style={{ color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.2em', fontWeight: 800, fontSize: '0.85rem' }}>The Eos Advantage</span>
-                    <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--secondary)' }}>Why Choose Eos?</h2>
+            <section className="container trust-section-wrapper">
+                <div className="trust-section-header">
+                    <span className="section-subtitle">The Eos Advantage</span>
+                    <h2>Why Choose Eos?</h2>
                 </div>
                 <TrustBadges />
             </section>
