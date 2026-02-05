@@ -30,29 +30,53 @@ const PropertyCard = ({
             <div className="property-card">
                 <div className="property-image">
                     <img src={image} alt={name} loading="lazy" />
-                    <div className="property-badges hide-mobile">
+                    <div className="property-badges">
                         {lastMinute && (
                             <span className="badge badge-last-minute">
                                 <Award size={14} style={{ marginRight: '4px' }} />
-                                -{discountPercent}%
+                                -{discountPercent}% Last Minute
                             </span>
+                        )}
+                        {(badges || []).map(badge => {
+                            const badgeSlug = badge.toLowerCase().replace(/\s+/g, '-');
+                            return (
+                                <span key={badge} className={`badge badge-${badgeSlug}`}>
+                                    {getBadgeIcon(badge)}
+                                    {badge}
+                                </span>
+                            );
+                        })}
+                    </div>
+
+                    <div className={`price-tag ${lastMinute ? 'price-tag-last-minute' : ''}`}>
+                        {lastMinute && originalPrice && (
+                            <span className="price-was">Was €{originalPrice}</span>
+                        )}
+                        <div className="price-main">
+                            <span className="price-label">{lastMinute ? 'Now' : 'from'}</span>
+                            <span className="price-amount">€{price}</span>
+                            <span className="price-period">/night</span>
+                        </div>
+                        {lastMinute && minNights && (
+                            <span className="price-min-stay">Min. {minNights} nights</span>
                         )}
                     </div>
                 </div>
 
-
                 <div className="card-content">
                     <div className="card-header">
-                        <div className="mobile-compact-row show-mobile">
-                            <div className="rating-mini">
-                                <Star size={12} fill="currentColor" />
-                                <span>{rating || 5.0}</span>
-                            </div>
-                            {lastMinute && <span className="mobile-badge-urgent">Offer</span>}
+                        <div className="rating-mini">
+                            <Star size={12} fill="currentColor" />
+                            <span>{rating || 5.0} Review Score</span>
                         </div>
+                        {mainThemeLabel && (
+                            <div className="theme-label">
+                                {mainThemeLabel}
+                            </div>
+                        )}
                         <h3 title={name}>{name}</h3>
                         <p className="location-text">
-                            <MapPin size={12} />
+                            <MapPin size={14} />
                             {location}
                         </p>
                     </div>
@@ -66,19 +90,18 @@ const PropertyCard = ({
                             <Bed size={16} />
                             <span>{bedrooms} <small>Beds</small></span>
                         </div>
+                        <div className="amenity">
+                            <Bath size={16} />
+                            <span>{bathrooms} <small>Baths</small></span>
+                        </div>
                     </div>
 
-                    <div className="card-footer-booking">
-                        <div className="price-block">
-                            <span className="price-val">€{price}</span>
-                            <span className="price-sub">/night</span>
-                        </div>
-                        <div className="details-link-compact">
-                            {lastMinute ? 'View' : 'Details'}
+                    <div className="card-footer">
+                        <div className="details-link">
+                            {lastMinute ? 'View offer' : 'Discover'}
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )

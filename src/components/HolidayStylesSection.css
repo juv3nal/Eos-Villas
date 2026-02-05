@@ -158,9 +158,8 @@
     }
 
     .style-card {
-        flex: 0 0 80%;
-        padding: 1.5rem;
-        margin-right: 1.25rem;
+        flex: 0 0 280px;
+        padding: 2rem;
     }
 
     .styles-header .section-title {

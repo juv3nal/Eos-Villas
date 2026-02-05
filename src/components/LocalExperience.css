@@ -161,65 +161,13 @@
 }
 
 @media (max-width: 768px) {
-    .local-experience-section {
-        padding: 3rem 1rem;
-    }
-
     .section-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 1.5rem;
+        gap: 2rem;
     }
 
     .section-title {
-        font-size: 1.75rem;
-    }
-
-    .experience-grid {
-        display: flex;
-        overflow-x: auto;
-        gap: 1.25rem;
-        margin: 1.5rem -1rem 0;
-        padding: 0 1rem;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-    }
-
-    .experience-grid::-webkit-scrollbar {
-        display: none;
-    }
-
-    .experience-card {
-        flex: 0 0 80%;
-        /* Consistent peek */
-        scroll-snap-align: start;
-    }
-
-    .experience-image {
-        height: 180px;
-    }
-
-    .experience-content {
-        padding: 1.25rem;
-    }
-
-    .experience-content h3 {
-        font-size: 1.15rem;
-        margin-bottom: 0.5rem;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .experience-meta {
-        font-size: 0.7rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .read-more {
-        display: none;
-        /* Hide for extreme density */
+        font-size: 2.25rem;
     }
 }

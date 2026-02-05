@@ -61,126 +61,92 @@ function Home() {
             {/* Last Minute Escapes */}
             <LastMinuteOffersSection properties={lastMinuteProperties} />
 
+            {/* Why Choose Eos - Trust Section */}
+            <section className="container section" style={{ padding: '6rem 2rem' }}>
+                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                    <span className="section-subtitle" style={{ color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.2em', fontWeight: 800, fontSize: '0.85rem' }}>The Eos Advantage</span>
+                    <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--secondary)' }}>Why Choose Eos?</h2>
+                </div>
+                <TrustBadges />
+            </section>
+
             {/* Holiday Styles */}
             <HolidayStylesSection />
 
             {/* Featured Destinations */}
-            <section className="section bg-light featured-destinations-section">
+            <section className="section bg-light" style={{ padding: '8rem 2rem', background: 'var(--surface-muted)' }}>
                 <div className="container">
-                    <div className="section-header-compact">
+                    <div style={{ marginBottom: '4rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem' }}>
                         <div>
-                            <h2 className="title">Popular Destinations</h2>
-                            <p className="subtitle">Explore the Mediterranean.</p>
+                            <h2 style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem' }}>
+                                Popular Destinations
+                            </h2>
+                            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>Explore the most beautiful corners of the Mediterranean.</p>
                         </div>
-                        <Link to="/destinations" className="link-arrow hide-mobile">Explore All →</Link>
+                        <Link to="/destinations" className="link-arrow">Explore All Destinations →</Link>
                     </div>
 
-                    <div className="mobile-carousel">
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                        gap: '2.5rem'
+                    }}>
                         {featuredDestinations.map(dest => (
-                            <div key={dest.id} className="mobile-carousel-item">
-                                <DestinationCard {...dest} />
-                            </div>
+                            <DestinationCard key={dest.id} {...dest} />
                         ))}
                     </div>
-                    <Link to="/destinations" className="btn btn-outline show-mobile" style={{ marginTop: '1.5rem', width: '100%' }}>View All Destinations</Link>
                 </div>
             </section>
 
             {/* Featured Properties */}
-            <section className="container section featured-properties-section">
-                <div className="section-header-centered">
-                    <h2>Featured Properties</h2>
-                    <p>Our selection of exclusive villas and apartments.</p>
+            <section className="container section" style={{ padding: '8rem 2rem' }}>
+                <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
+                    <h2 style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '1rem' }}>
+                        Featured Properties
+                    </h2>
+                    <p style={{ color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem' }}>
+                        Our selection of exclusive villas and apartments for an unforgettable holiday experience.
+                    </p>
                 </div>
 
-                <div className="mobile-carousel">
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                    gap: '2.5rem'
+                }}>
                     {featuredProperties.map(prop => (
-                        <div key={prop.id} className="mobile-carousel-item">
-                            <PropertyCard {...prop} />
-                        </div>
+                        <PropertyCard key={prop.id} {...prop} />
                     ))}
                 </div>
 
-                <div className="section-footer-compact">
-                    <Link to="/search" className="btn btn-primary">
+                <div style={{ marginTop: '5rem', textAlign: 'center' }}>
+                    <Link to="/search" className="btn btn-primary" style={{ padding: '1.25rem 3rem', fontSize: '1.1rem' }}>
                         Find Your Perfect Villa
                     </Link>
                 </div>
             </section>
 
-            {/* Guest Reviews */}
-            <section className="section guest-reviews-section">
-                <div className="container">
-                    <div className="section-header-centered dark">
-                        <h2>What Our Guests Say</h2>
-                        <p>Authentic experiences from our travelers.</p>
-                    </div>
-
-                    <div className="mobile-carousel review-carousel">
-                        {reviews.map(review => (
-                            <div key={review.id} className="mobile-carousel-item review-carousel-item">
-                                <ReviewCard {...review} />
-                            </div>
-                        ))}
-                    </div>
-
-                </div>
-            </section>
-
             {/* Local Experience - Blog/Stories */}
-            <div className="local-experience-wrapper">
+            <div style={{ background: 'var(--surface-muted)' }}>
                 <LocalExperience />
             </div>
 
-            {/* Why Choose Eos - Trust Section (Compressed for mobile) */}
-            <section className="container section why-choose-section hide-mobile">
-                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                    <span className="section-subtitle">The Eos Advantage</span>
-                    <h2>Why Choose Eos?</h2>
-                </div>
-                <TrustBadges />
-            </section>
-
-            {/* Partners & Trust (Compressed for mobile) */}
-            <section className="section partners-section hide-mobile">
+            {/* Guest Reviews */}
+            <section className="section" style={{ padding: '8rem 2rem', background: 'var(--secondary)', color: 'white' }}>
                 <div className="container">
-                    <div className="trust-partners-grid">
-                        <div className="trust-partner">
-                            <ShieldCheck size={32} />
-                            <span>EOT Licensed</span>
-                        </div>
-                        <div className="trust-partner">
-                            <Globe size={32} />
-                            <span>GNTO Member</span>
-                        </div>
-                        <div className="trust-partner">
-                            <Shield size={32} />
-                            <span>ABTOT Protected</span>
-                        </div>
-                        <div className="trust-partner">
-                            <CheckCircle size={32} />
-                            <span>Safe Stay</span>
-                        </div>
+                    <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                        <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem' }}>What Our Guests Say</h2>
+                        <p style={{ opacity: 0.8, fontSize: '1.1rem' }}>Authentic experiences from travelers who stayed with us.</p>
                     </div>
-                </div>
-            </section>
 
-            {/* Newsletter */}
-            <section className="section newsletter-section">
-                <div className="container">
-                    <div className="newsletter-card">
-                        <h2>Stay Inspired</h2>
-                        <p>Subscribe for travel tips and exclusive alerts.</p>
-                        <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                            <input
-                                type="email"
-                                placeholder="Your email"
-                                className="newsletter-input"
-                            />
-                            <button className="newsletter-subscribe-btn">
-                                Subscribe
-                            </button>
-                        </form>
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                        gap: '2.5rem'
+                    }}>
+                        {reviews.map(review => (
+                            <ReviewCard key={review.id} {...review} />
+                        ))}
                     </div>
                 </div>
             </section>

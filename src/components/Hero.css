@@ -4,17 +4,8 @@
     display: flex;
     align-items: center;
     color: white;
-    padding: 6rem 0;
-    /* More balanced padding */
-    margin-bottom: 2rem;
-    /* Reduced for mobile flow */
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        min-height: 40vh;
-        padding: 3rem 0 1.5rem;
-    }
+    padding: 4rem 0;
+    margin-bottom: 4rem;
 }
 
 .hero-bg {
@@ -259,116 +250,25 @@
 }
 
 @media (max-width: 850px) {
-    .hero-content h1 {
-        margin-bottom: 0.75rem;
-        font-size: 1.75rem;
-        letter-spacing: -1px;
+    .search-bar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        border-radius: var(--radius-md);
     }
 
-    .hero-subtitle {
+    .divider-vertical {
         display: none;
     }
 
-    .mobile-search-trigger {
-        background: white;
-        padding: 1rem 1.5rem;
-        border-radius: 99px;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        box-shadow: var(--shadow-lg);
-        max-width: 320px;
-        margin: 0 auto;
-        cursor: pointer;
-    }
-
-    .mobile-search-trigger span {
-        color: var(--text-muted);
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
-    .mobile-search-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(11, 18, 32, 0.6);
-        z-index: 2000;
-        display: flex;
-        align-items: flex-end;
-    }
-
-    .mobile-search-sheet {
-        background: white;
+    .search-group {
         width: 100%;
-        border-radius: 24px 24px 0 0;
-        padding: 1.5rem;
-        animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border);
     }
 
-    @keyframes slideUp {
-        from {
-            transform: translateY(100%);
-        }
-
-        to {
-            transform: translateY(0);
-        }
-    }
-
-    .sheet-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.5rem;
-    }
-
-    .sheet-header h3 {
-        font-size: 1.25rem;
-        font-weight: 800;
-        color: var(--secondary);
-    }
-
-    .close-sheet {
-        font-size: 1.5rem;
-        color: var(--text-muted);
-    }
-
-    .sheet-body {
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-        max-height: 70vh;
-        overflow-y: auto;
-        padding-bottom: 1rem;
-    }
-
-    .mobile-search-field {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .mobile-search-field label {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.85rem;
-        font-weight: 700;
-        color: var(--secondary);
-    }
-
-    .mobile-search-field select,
-    .mobile-datepicker {
-        padding: 0.75rem 1rem;
-        border: 1px solid var(--border);
-        border-radius: var(--radius-sm);
-        font-family: inherit;
-        font-size: 1rem;
-        background: var(--surface-muted);
-    }
-
-    .sheet-footer {
-        padding-top: 1rem;
-        border-top: 1px solid var(--border);
+    .search-btn {
+        width: 100%;
+        justify-content: center;
     }
 }

@@ -19,10 +19,9 @@ const LocalExperience = () => {
             </div>
 
             <div className="experience-grid">
-                {experiences.slice(0, window.innerWidth < 768 ? 2 : undefined).map((exp) => (
+                {experiences.map((exp) => (
                     <div
                         key={exp.id}
-
                         className="experience-card"
                         onClick={() => navigate(`/story/${exp.slug}`)}
                         style={{ cursor: 'pointer' }}

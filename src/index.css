@@ -61,18 +61,6 @@ button {
   .container {
     padding: 0 1rem;
   }
-
-  .section {
-    padding: 2.5rem 0 !important;
-    /* Tightened spacing without feeling cramped */
-  }
-
-  h1,
-  h2,
-  h3 {
-    letter-spacing: -0.02em;
-    /* Tighter for mobile app feel */
-  }
 }
 
 /* Animations */
@@ -295,79 +283,31 @@ button {
 }
 
 .display-6 {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-size: 2.5rem;
   line-height: 1.2;
 }
 
 .display-5 {
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: 3rem;
   line-height: 1.2;
 }
 
 .display-1 {
-  font-size: clamp(3rem, 10vw, 5rem);
+  font-size: 5rem;
   line-height: 1.1;
 }
 
 .display-2 {
-  font-size: clamp(2.75rem, 9vw, 4.5rem);
+  font-size: 4.5rem;
   line-height: 1.1;
 }
 
 .display-3 {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: 4rem;
   line-height: 1.1;
 }
 
 .display-4 {
-  font-size: clamp(2.25rem, 7vw, 3.5rem);
+  font-size: 3.5rem;
   line-height: 1.1;
-}
-
-/* Base Headings Scaling */
-h1 {
-  font-size: clamp(2.5rem, 8vw, 4rem);
-}
-
-h2 {
-  font-size: clamp(2rem, 6vw, 2.75rem);
-}
-
-h3 {
-  font-size: clamp(1.5rem, 5vw, 2rem);
-}
-
-h4 {
-  font-size: clamp(1.25rem, 4vw, 1.5rem);
-}
-
-/* Compact scrollbars for mobile carousels */
-.mobile-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  margin: 0 -1rem;
-  padding: 0 1rem 1rem;
-}
-
-.mobile-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.mobile-carousel-item {
-  flex: 0 0 80%;
-  /* Show 20% of next card for better affordance */
-  scroll-snap-align: start;
-  margin-right: 1.25rem;
-}
-
-@media (min-width: 769px) {
-  .mobile-carousel {
-    display: grid !important;
-    overflow: visible;
-    margin: 0;
-    padding: 0;
-  }
 }
