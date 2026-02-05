@@ -327,3 +327,107 @@
 .details-link:hover::after {
     transform: translateX(6px);
 }
+
+/* Mobile Optimizations - Reduced white space & sharpened definition */
+@media (max-width: 768px) {
+    .property-card {
+        border-color: var(--border-hover);
+        /* More defined border color */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    .property-image {
+        height: 210px;
+        /* More compact viewport */
+    }
+
+    .property-badges {
+        top: 0.75rem;
+        left: 0.75rem;
+        gap: 0.4rem;
+    }
+
+    .badge {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.65rem;
+        border-radius: 8px;
+    }
+
+    .property-card .price-tag {
+        bottom: 0.75rem;
+        right: 0.75rem;
+        padding: 0.5rem 0.85rem;
+        border-radius: 10px;
+    }
+
+    .price-amount {
+        font-size: 1.35rem;
+    }
+
+    .price-was {
+        font-size: 0.7rem;
+    }
+
+    .card-content {
+        padding: 1.25rem 1rem;
+        /* Tightened horizontal and vertical padding */
+        gap: 0.85rem;
+        /* Reduced vertical rhythm */
+    }
+
+    .card-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .rating-mini {
+        font-size: 0.75rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .theme-label {
+        font-size: 0.7rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .card-header h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .location-text {
+        font-size: 0.8rem;
+        gap: 0.25rem;
+    }
+
+    .amenities-grid {
+        padding: 0.85rem 0;
+        gap: 0.5rem;
+    }
+
+    .amenity {
+        gap: 0.2rem;
+    }
+
+    .amenity svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .amenity span {
+        font-size: 0.75rem;
+    }
+
+    .amenity small {
+        font-size: 0.65rem;
+    }
+
+    .details-link {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.85rem;
+        border-radius: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+}
