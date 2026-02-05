@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ShieldCheck, Globe, Shield, CheckCircle } from 'lucide-react'
+import { ShieldCheck, Globe, Shield, CheckCircle, X, ArrowRight } from 'lucide-react'
 import Hero from '../components/Hero'
 import PropertyCard from '../components/PropertyCard'
 import DestinationCard from '../components/DestinationCard'
@@ -27,6 +27,18 @@ const HERO_IMAGES = [
 ];
 
 function Home() {
+    const [isReviewsOverlayOpen, setIsReviewsOverlayOpen] = useState(false);
+
+    // Prevent body scroll when overlay is open
+    useEffect(() => {
+        if (isReviewsOverlayOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => { document.body.style.overflow = 'unset'; };
+    }, [isReviewsOverlayOpen]);
+
     // Show properties with lowest booking counts (simulating "Hidden Gems" or promotion logic)
     // TODO: Connect to backend API: GET /api/properties?sort=bookings:asc
     const featuredProperties = useMemo(() => {
@@ -127,8 +139,16 @@ function Home() {
             <section className="reviews-section">
                 <div className="container">
                     <div className="reviews-header">
-                        <h2>What Our Guests Say</h2>
-                        <p>Authentic experiences from travelers who stayed with us.</p>
+                        <div className="reviews-title-block">
+                            <h2>What Our Guests Say</h2>
+                            <p>Authentic experiences from travelers who stayed with us.</p>
+                        </div>
+                        <button
+                            className="view-all-reviews-btn mobile-only"
+                            onClick={() => setIsReviewsOverlayOpen(true)}
+                        >
+                            View All {reviews.length} Reviews <ArrowRight size={16} />
+                        </button>
                     </div>
 
                     <div className="reviews-grid-wrapper">
@@ -184,6 +204,30 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* Reviews Overlay Modal for Mobile */}
+            {isReviewsOverlayOpen && (
+                <div className="reviews-overlay">
+                    <div className="overlay-header">
+                        <h3>Guest Reviews</h3>
+                        <button className="close-overlay" onClick={() => setIsReviewsOverlayOpen(false)}>
+                            <X size={24} />
+                        </button>
+                    </div>
+                    <div className="overlay-content">
+                        <div className="reviews-list-vertical">
+                            {reviews.map(review => (
+                                <ReviewCard key={`overlay-${review.id}`} {...review} />
+                            ))}
+                        </div>
+                        <div className="overlay-footer">
+                            <button className="btn btn-primary w-full" onClick={() => setIsReviewsOverlayOpen(false)}>
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
