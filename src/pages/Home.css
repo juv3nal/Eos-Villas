@@ -99,13 +99,104 @@
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
-/* Featured Properties Buttons Refinement */
-.home-page .btn-primary {
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+/* Refined Section Headers for Mobile Density */
+.section-header-compact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    gap: 1rem;
 }
 
-.home-page .btn-primary:hover {
-    background: var(--primary-dark);
-    transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(255, 125, 0, 0.4);
+.section-header-compact .title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 0.25rem;
+}
+
+.section-header-compact .subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.section-header-centered {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header-centered h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.section-header-centered.dark h2 {
+    color: white;
+}
+
+.section-header-centered p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-header-centered.dark p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.section-footer-compact {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+/* Newsletter Refinement */
+.newsletter-card {
+    background: var(--primary);
+    border-radius: var(--radius-lg);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 15px 35px rgba(255, 125, 0, 0.2);
+}
+
+.newsletter-card h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.newsletter-card p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+/* Visibility Utilities */
+.hide-mobile {
+    display: flex;
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .show-mobile {
+        display: block !important;
+    }
+
+    .section-header-compact .title {
+        font-size: 1.5rem;
+    }
+
+    .section-header-centered h2 {
+        font-size: 1.75rem;
+    }
 }

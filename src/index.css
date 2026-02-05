@@ -357,9 +357,10 @@ h4 {
 }
 
 .mobile-carousel-item {
-  flex: 0 0 85%;
+  flex: 0 0 80%;
+  /* Show 20% of next card for better affordance */
   scroll-snap-align: start;
-  margin-right: 1rem;
+  margin-right: 1.25rem;
 }
 
 @media (min-width: 769px) {

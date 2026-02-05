@@ -95,7 +95,7 @@
     }
 
     .offers-grid>* {
-        flex: 0 0 85%;
+        flex: 0 0 80%;
         scroll-snap-align: start;
     }
 
