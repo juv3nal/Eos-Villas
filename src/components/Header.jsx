@@ -75,7 +75,7 @@ const Header = () => {
                                 onClick={() => setIsSearchOpen(!isSearchOpen)}
                                 aria-label="Search"
                             >
-                                {isSearchOpen ? <X size={20} /> : <Search size={20} />}
+                                {isSearchOpen ? <X size={20} /> : <Search size={22} />}
                             </button>
                         </div>
                         <button
@@ -85,49 +85,78 @@ const Header = () => {
                         >
                             <User size={20} />
                         </button>
-                        <button className="mobile-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-                            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        <button
+                            className="mobile-toggle"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label="Menu"
+                        >
+                            <Menu size={24} />
                         </button>
                     </div>
                 </div>
 
-                {/* Mobile Menu */}
-                <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-                    <div className="mobile-search">
-                        <form onSubmit={handleSearchSubmit}>
-                            <Search size={18} />
-                            <input
-                                type="text"
-                                placeholder="Find your villa..."
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            />
-                        </form>
+                {/* Mobile Drawer Overlay */}
+                <div
+                    className={`mobile-drawer-overlay ${isMobileMenuOpen ? 'open' : ''}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                />
+
+                {/* Mobile Slide-in Drawer */}
+                <div className={`mobile-drawer ${isMobileMenuOpen ? 'open' : ''}`}>
+                    <div className="drawer-header">
+                        <div className="logo">
+                            <img src="/images/logo.png" alt="EOS Villas" style={{ height: '32px' }} />
+                        </div>
+                        <button className="close-drawer" onClick={() => setIsMobileMenuOpen(false)}>
+                            <X size={24} />
+                        </button>
                     </div>
-                    <ul className="mobile-nav-links">
-                        <li><Link to="/destination/corfu" onClick={() => setIsMobileMenuOpen(false)}>Corfu</Link></li>
-                        <li><Link to="/destination/paxos" onClick={() => setIsMobileMenuOpen(false)}>Paxos</Link></li>
-                        <li><Link to="/destination/algarve" onClick={() => setIsMobileMenuOpen(false)}>Algarve</Link></li>
-                        <li><Link to="/destination/halkidiki" onClick={() => setIsMobileMenuOpen(false)}>Halkidiki</Link></li>
-                        <li><Link to="/destination/costa-del-sol" onClick={() => setIsMobileMenuOpen(false)}>Costa Del Sol</Link></li>
-                        <li className="divider"></li>
-                        <li><Link to="#" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
-                        <li><Link to="#" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
-                        <li><Link to="#" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
-                        <li className="divider"></li>
-                        <li>
+
+                    <div className="drawer-content">
+                        <div className="mobile-search-compact">
+                            <form onSubmit={handleSearchSubmit}>
+                                <Search size={18} />
+                                <input
+                                    type="text"
+                                    placeholder="Where to?"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                />
+                            </form>
+                        </div>
+
+                        <div className="drawer-section">
+                            <h4>Destinations</h4>
+                            <ul className="drawer-links">
+                                <li><Link to="/destinations" onClick={() => setIsMobileMenuOpen(false)}>All Destinations</Link></li>
+                                <li><Link to="/destination/corfu" onClick={() => setIsMobileMenuOpen(false)}>Corfu</Link></li>
+                                <li><Link to="/destination/paxos" onClick={() => setIsMobileMenuOpen(false)}>Paxos</Link></li>
+                                <li><Link to="/destination/algarve" onClick={() => setIsMobileMenuOpen(false)}>Algarve</Link></li>
+                                <li><Link to="/destination/halkidiki" onClick={() => setIsMobileMenuOpen(false)}>Halkidiki</Link></li>
+                            </ul>
+                        </div>
+
+                        <div className="drawer-section">
+                            <h4>Company</h4>
+                            <ul className="drawer-links">
+                                <li><Link to="#" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
+                                <li><Link to="#" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
+                                <li><Link to="#" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
+                            </ul>
+                        </div>
+
+                        <div className="drawer-footer">
                             <button
-                                className="btn-link-premium"
-                                style={{ padding: '15px 25px', width: '100%', textAlign: 'left', display: 'flex', alignItems: 'center' }}
+                                className="btn btn-primary btn-block"
                                 onClick={() => {
                                     setIsMobileMenuOpen(false);
                                     setIsAuthModalOpen(true);
                                 }}
                             >
-                                <User size={18} className="mr-3" /> Sign In / Register
+                                <User size={18} /> Sign In
                             </button>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </header>
 

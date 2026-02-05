@@ -86,13 +86,11 @@ function Home() {
                         <Link to="/destinations" className="link-arrow">Explore All Destinations →</Link>
                     </div>
 
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-                        gap: '2.5rem'
-                    }}>
+                    <div className="mobile-carousel">
                         {featuredDestinations.map(dest => (
-                            <DestinationCard key={dest.id} {...dest} />
+                            <div key={dest.id} className="mobile-carousel-item">
+                                <DestinationCard {...dest} />
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -109,13 +107,11 @@ function Home() {
                     </p>
                 </div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                    gap: '2.5rem'
-                }}>
+                <div className="mobile-carousel">
                     {featuredProperties.map(prop => (
-                        <PropertyCard key={prop.id} {...prop} />
+                        <div key={prop.id} className="mobile-carousel-item">
+                            <PropertyCard {...prop} />
+                        </div>
                     ))}
                 </div>
 
@@ -139,13 +135,11 @@ function Home() {
                         <p style={{ opacity: 0.8, fontSize: '1.1rem' }}>Authentic experiences from travelers who stayed with us.</p>
                     </div>
 
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '2.5rem'
-                    }}>
+                    <div className="mobile-carousel">
                         {reviews.map(review => (
-                            <ReviewCard key={review.id} {...review} />
+                            <div key={review.id} className="mobile-carousel-item">
+                                <ReviewCard {...review} />
+                            </div>
                         ))}
                     </div>
                 </div>

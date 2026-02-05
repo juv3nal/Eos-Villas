@@ -58,21 +58,21 @@ const Hero = ({ images = [], title, subtitle, destination: initialDestination, s
 
             <div className="container hero-content animate-fade-in">
                 <h1>{title || <>Your Mediterranean Dream<span className="text-orange">scape</span></>}</h1>
-                <p className="hero-subtitle">{subtitle || `Curated rental properties in the most beautiful corners of ${selectedDestination || "the Mediterranean"}.`}</p>
+                <p className="hero-subtitle">{subtitle || `Curated stays in ${selectedDestination || "the Mediterranean"}.`}</p>
 
                 {showSearch && (
                     <div className="search-bar animate-fade-in" style={{ animationDelay: '0.2s' }}>
                         <div className="search-group">
                             <div className="search-icon"><MapPin size={18} /></div>
                             <div className="search-input">
-                                <label>Location</label>
+                                <label className="hide-mobile">Location</label>
                                 <div className="dropdown-wrapper">
                                     <select
                                         className="destination-select"
                                         value={selectedDestination}
                                         onChange={(e) => setSelectedDestination(e.target.value)}
                                     >
-                                        <option value="" disabled>Select</option>
+                                        <option value="" disabled>Where to?</option>
                                         {destinations.map(dest => (
                                             <option key={dest.value} value={dest.value}>{dest.label}</option>
                                         ))}
@@ -84,7 +84,7 @@ const Hero = ({ images = [], title, subtitle, destination: initialDestination, s
 
                         <div className="divider-vertical"></div>
 
-                        <div className="search-group">
+                        <div className="search-group hide-mobile">
                             <div className="search-icon"><Calendar size={18} /></div>
                             <div className="search-input">
                                 <label>Dates</label>
@@ -103,7 +103,7 @@ const Hero = ({ images = [], title, subtitle, destination: initialDestination, s
 
                         <div className="divider-vertical"></div>
 
-                        <div className="search-group">
+                        <div className="search-group hide-mobile">
                             <div className="search-icon"><Users size={18} /></div>
                             <div className="search-input">
                                 <label>Guests</label>
@@ -122,7 +122,7 @@ const Hero = ({ images = [], title, subtitle, destination: initialDestination, s
 
                         <button className="search-btn">
                             <Search size={20} />
-                            <span>Search</span>
+                            <span className="hide-mobile">Search</span>
                         </button>
                     </div>
                 )}

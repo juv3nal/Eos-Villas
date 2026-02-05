@@ -327,3 +327,57 @@
 .details-link:hover::after {
     transform: translateX(6px);
 }
+
+@media (max-width: 768px) {
+    .property-card {
+        border-radius: var(--radius-md);
+    }
+
+    .card-content {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .property-image {
+        height: 180px;
+    }
+
+    .card-header h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .location-text {
+        font-size: 0.85rem;
+    }
+
+    .amenities-grid {
+        gap: 1rem;
+        padding: 1rem 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .amenity {
+        font-size: 0.7rem;
+    }
+
+    .amenity svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .price-tag {
+        bottom: 0.75rem;
+        right: 0.75rem;
+        padding: 0.4rem 0.8rem !important;
+    }
+
+    .price-amount {
+        font-size: 1.25rem;
+    }
+
+    .details-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}

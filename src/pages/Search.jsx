@@ -4,7 +4,7 @@ import { properties } from '../data/properties'
 import PropertyCard from '../components/PropertyCard'
 import PropertyGrid from '../components/PropertyGrid'
 import FilterSidebar from '../components/FilterSidebar'
-import { Search as SearchIcon, MapPin, Home, Info } from 'lucide-react'
+import { Search as SearchIcon, MapPin, Home, Info, X, SlidersHorizontal, ChevronRight, Star } from 'lucide-react'
 import './Search.css'
 
 function Search() {
@@ -14,6 +14,8 @@ function Search() {
     const showLastMinuteOnly = queryParams.get('lastMinute') === 'true';
     const themeFilter = queryParams.get('theme');
 
+    const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
+    const [visibleCount, setVisibleCount] = useState(6);
     const [filters, setFilters] = useState({
         types: [],
         maxPrice: 1000,
@@ -78,11 +80,26 @@ function Search() {
         });
 
         return results;
-    }, [query, filters]);
+    }, [query, filters, showLastMinuteOnly, themeFilter]);
 
     const handleFilterChange = (newFilters) => {
-        console.log('Filters changed in Search:', newFilters);
         setFilters(newFilters);
+        setVisibleCount(6); // Reset pagination
+    };
+
+    const clearFilters = () => {
+        setFilters({
+            types: [],
+            maxPrice: 1000,
+            amenities: {
+                pool: false,
+                wifi: false,
+                ac: false,
+                parking: false,
+                pets: false
+            }
+        });
+        setVisibleCount(6);
     };
 
     const getThemeTitle = (theme) => {
@@ -97,8 +114,11 @@ function Search() {
         return themes[theme] || 'Themed Stays';
     };
 
+    const displayResults = filteredResults.slice(0, visibleCount);
+    const hasMore = visibleCount < filteredResults.length;
+
     return (
-        <div className="search-page">
+        <div className={`search-page ${isFilterDrawerOpen ? 'drawer-open' : ''}`}>
             <div className="container">
                 <header className="search-header">
                     <div className="search-info">
@@ -107,60 +127,80 @@ function Search() {
                         </h1>
                         <div className="results-meta">
                             <span className="results-count">
-                                {filteredResults.length} {filteredResults.length === 1 ? 'property' : 'properties'} found
+                                {filteredResults.length} {filteredResults.length === 1 ? 'found' : 'found'}
                             </span>
                             {themeFilter && (
                                 <Link to="/search" className="clear-theme-filter">
                                     <Info size={14} />
-                                    Holiday style: {getThemeTitle(themeFilter)} <span>✕</span>
+                                    {getThemeTitle(themeFilter)} <span>✕</span>
                                 </Link>
                             )}
                         </div>
                     </div>
+
+                    {/* Mobile Quick Filters */}
+                    <div className="quick-filters-row">
+                        <button className="mobile-filter-trigger" onClick={() => setIsFilterDrawerOpen(true)}>
+                            <SlidersHorizontal size={18} /> Filters
+                        </button>
+                        <div className="quick-chips">
+                            <button className={`chip ${filters.maxPrice < 1000 ? 'active' : ''}`} onClick={() => setIsFilterDrawerOpen(true)}>Price</button>
+                            <button className={`chip ${filters.amenities.pool ? 'active' : ''}`} onClick={() => handleFilterChange({ ...filters, amenities: { ...filters.amenities, pool: !filters.amenities.pool } })}>Pool</button>
+                            <button className={`chip ${filters.amenities.wifi ? 'active' : ''}`} onClick={() => handleFilterChange({ ...filters, amenities: { ...filters.amenities, wifi: !filters.amenities.wifi } })}>WiFi</button>
+                            <button className={`chip ${filters.types.includes('Villa') ? 'active' : ''}`} onClick={() => handleFilterChange({ ...filters, types: filters.types.includes('Villa') ? filters.types.filter(t => t !== 'Villa') : [...filters.types, 'Villa'] })}>Villas</button>
+                        </div>
+                    </div>
                 </header>
 
-                <div className="row">
-                    {/* Filters Sidebar */}
-                    <aside className="col-md-4 col-lg-3 mb-5">
-                        <div className="sticky-filters">
+                <div className="search-content-wrapper">
+                    {/* Desktop Sidebar / Mobile Drawer Overlay */}
+                    <div className={`sidebar-overlay ${isFilterDrawerOpen ? 'open' : ''}`} onClick={() => setIsFilterDrawerOpen(false)} />
+
+                    <aside className={`search-sidebar ${isFilterDrawerOpen ? 'open' : ''}`}>
+                        <div className="sidebar-header mobile-only">
+                            <h3>Filters</h3>
+                            <button className="close-filters" onClick={() => setIsFilterDrawerOpen(false)}>
+                                <X size={24} />
+                            </button>
+                        </div>
+
+                        <div className="filter-inner">
                             <FilterSidebar
                                 filters={filters}
                                 onFilterChange={handleFilterChange}
                                 minPrice={minPrice}
                             />
+
+                            <div className="sidebar-footer mobile-only">
+                                <button className="btn btn-primary w-100" onClick={() => setIsFilterDrawerOpen(false)}>
+                                    Show {filteredResults.length} Results
+                                </button>
+                                <button className="clear-all-btn" onClick={clearFilters}>Clear All</button>
+                            </div>
                         </div>
                     </aside>
 
-                    {/* Results Content */}
-                    <main className="col-md-8 col-lg-9">
-                        {filteredResults.length > 0 ? (
-                            <PropertyGrid properties={filteredResults} />
+                    <main className="search-main">
+                        {displayResults.length > 0 ? (
+                            <>
+                                <PropertyGrid properties={displayResults} />
+                                {hasMore && (
+                                    <div className="load-more-container">
+                                        <button className="btn-load-more" onClick={() => setVisibleCount(prev => prev + 6)}>
+                                            Load More Properties
+                                        </button>
+                                        <p className="progress-text">Showing {displayResults.length} of {filteredResults.length}</p>
+                                    </div>
+                                )}
+                            </>
                         ) : (
                             <div className="no-results">
-                                <div className="no-results-content">
-                                    <SearchIcon size={64} className="text-muted mb-3 opacity-50" />
-                                    <h2>No properties found</h2>
-                                    <p>Try adjusting your search or filters to see more options.</p>
-
-                                    {query && (
-                                        <div className="suggestions">
-                                            <p>Popular searches:</p>
-                                            <div className="suggestion-chips">
-                                                <Link to="/search?q=Corfu" className="chip">Corfu</Link>
-                                                <Link to="/search?q=Villa" className="chip">Villa</Link>
-                                                <Link to="/search?q=Algarve" className="chip">Algarve</Link>
-                                                <Link to="/search?q=Pool" className="chip">Pool</Link>
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    <button
-                                        className="btn btn-primary mt-4"
-                                        onClick={() => setFilters({ types: [], maxPrice: 1000, amenities: { pool: false, wifi: false, ac: false, parking: false, pets: false } })}
-                                    >
-                                        Reset Filters
-                                    </button>
-                                </div>
+                                <SearchIcon size={64} className="text-muted mb-3 opacity-50" />
+                                <h2>No properties found</h2>
+                                <p>Try adjusting your search or filters to see more options.</p>
+                                <button className="btn btn-primary mt-4" onClick={clearFilters}>
+                                    Reset Filters
+                                </button>
                             </div>
                         )}
                     </main>
