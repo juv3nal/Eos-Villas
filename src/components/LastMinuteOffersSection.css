@@ -75,39 +75,48 @@
 
 /* Mobile: Horizontal scroll on mobile as requested */
 @media (max-width: 992px) {
-    .offers-grid {
-        grid-template-columns: repeat(3, 1fr);
-        display: flex;
-        overflow-x: auto;
-        padding: 1rem 1rem 2rem;
-        margin: 0 -1rem;
-        scroll-snap-type: x mandatory;
-        gap: 1.5rem;
-        -ms-overflow-style: none;
-        /* IE and Edge */
-        scrollbar-width: none;
-        /* Firefox */
-    }
-
-    .offers-grid::-webkit-scrollbar {
-        display: none;
-        /* Chrome, Safari and Opera */
-    }
-
-    .offers-grid>* {
-        flex: 0 0 85%;
-        scroll-snap-align: start;
+    .last-minute-section {
+        padding: 3rem 0;
     }
 
     .section-header-last-minute {
         flex-direction: column;
         align-items: flex-start;
-        gap: 1.5rem;
+        gap: 1rem;
+        margin-bottom: 2rem;
     }
-}
 
-@media (max-width: 576px) {
     .section-header-last-minute .section-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .section-header-last-minute .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .offers-grid {
+        display: flex;
+        overflow-x: auto;
+        padding: 0 1rem 1rem;
+        margin: 0;
+        scroll-snap-type: x mandatory;
+        gap: 1.25rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        width: auto;
+    }
+
+    .offers-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .offers-grid>* {
+        flex: 0 0 280px;
+        /* Strong peek effect */
+        scroll-snap-align: start;
+    }
+
+    .view-all-offers {
+        font-size: 0.95rem;
     }
 }

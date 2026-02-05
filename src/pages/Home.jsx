@@ -95,30 +95,26 @@ function Home() {
             </section>
 
             {/* Featured Properties */}
-            <section className="container section" style={{ padding: '8rem 2rem' }}>
-                <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-                    <h2 style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '1rem' }}>
-                        Featured Properties
-                    </h2>
-                    <p style={{ color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem' }}>
-                        Our selection of exclusive villas and apartments for an unforgettable holiday experience.
-                    </p>
-                </div>
+            <section className="featured-properties-section">
+                <div className="container">
+                    <div className="featured-header">
+                        <h2>Featured Properties</h2>
+                        <p>Our selection of exclusive villas and apartments for an unforgettable holiday experience.</p>
+                    </div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                    gap: '2.5rem'
-                }}>
-                    {featuredProperties.map(prop => (
-                        <PropertyCard key={prop.id} {...prop} />
-                    ))}
-                </div>
+                    <div className="properties-grid-wrapper">
+                        <div className="properties-grid">
+                            {featuredProperties.map(prop => (
+                                <PropertyCard key={prop.id} {...prop} />
+                            ))}
+                        </div>
+                    </div>
 
-                <div style={{ marginTop: '5rem', textAlign: 'center' }}>
-                    <Link to="/search" className="btn btn-primary" style={{ padding: '1.25rem 3rem', fontSize: '1.1rem' }}>
-                        Find Your Perfect Villa
-                    </Link>
+                    <div className="featured-cta">
+                        <Link to="/search" className="btn btn-primary">
+                            Find Your Perfect Villa
+                        </Link>
+                    </div>
                 </div>
             </section>
 

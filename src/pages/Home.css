@@ -219,6 +219,95 @@
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
+.featured-properties-section {
+    padding: 8rem 2rem;
+}
+
+.featured-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.featured-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.featured-header p {
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.featured-cta {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.featured-cta .btn-primary {
+    padding: 1.25rem 3rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .featured-properties-section {
+        padding: 4rem 1rem;
+    }
+
+    .featured-header {
+        margin-bottom: 2rem;
+    }
+
+    .featured-header h2 {
+        font-size: 2rem;
+    }
+
+    .featured-header p {
+        font-size: 1rem;
+    }
+
+    /* Horizontal scroll for properties on mobile */
+    .properties-grid-wrapper {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+    }
+
+    .properties-grid-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .properties-grid {
+        display: flex;
+        gap: 1.25rem;
+        padding-bottom: 1rem;
+        width: max-content;
+    }
+
+    .properties-grid>* {
+        flex: 0 0 280px;
+        /* Strong peek effect for property cards */
+        scroll-snap-align: start;
+        height: auto;
+    }
+
+    .featured-cta {
+        margin-top: 2rem;
+    }
+}
+
 /* Featured Properties Buttons Refinement */
 .home-page .btn-primary {
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
