@@ -74,26 +74,22 @@ function Home() {
             <HolidayStylesSection />
 
             {/* Featured Destinations */}
-            <section className="section bg-light" style={{ padding: '8rem 2rem', background: 'var(--surface-muted)' }}>
+            <section className="destinations-section">
                 <div className="container">
-                    <div style={{ marginBottom: '4rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '1rem' }}>
-                        <div>
-                            <h2 style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--secondary)', marginBottom: '0.5rem' }}>
-                                Popular Destinations
-                            </h2>
-                            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>Explore the most beautiful corners of the Mediterranean.</p>
+                    <div className="destinations-header">
+                        <div className="destinations-title-block">
+                            <h2>Popular Destinations</h2>
+                            <p>Explore the most beautiful corners of the Mediterranean.</p>
                         </div>
                         <Link to="/destinations" className="link-arrow">Explore All Destinations →</Link>
                     </div>
 
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-                        gap: '2.5rem'
-                    }}>
-                        {featuredDestinations.map(dest => (
-                            <DestinationCard key={dest.id} {...dest} />
-                        ))}
+                    <div className="destinations-grid-wrapper">
+                        <div className="destinations-grid">
+                            {featuredDestinations.map(dest => (
+                                <DestinationCard key={dest.id} {...dest} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

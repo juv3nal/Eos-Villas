@@ -63,6 +63,25 @@
     line-height: 1;
 }
 
+@media (max-width: 768px) {
+    .destination-overlay {
+        padding: 1.5rem;
+    }
+
+    .destination-info h3 {
+        font-size: 1.75rem;
+    }
+
+    .destination-stats {
+        padding-top: 1rem;
+    }
+
+    .destination-card .price-tag span {
+        font-size: 1.25rem;
+    }
+}
+
+
 .destination-stats {
     display: flex;
     justify-content: space-between;

@@ -70,6 +70,88 @@
     }
 }
 
+.destinations-section {
+    padding: 8rem 2rem;
+    background: var(--surface-muted);
+}
+
+.destinations-header {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.destinations-title-block h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.destinations-title-block p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .destinations-section {
+        padding: 4rem 1rem;
+    }
+
+    .destinations-header {
+        margin-bottom: 2.25rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .destinations-title-block h2 {
+        font-size: 2rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .destinations-title-block p {
+        font-size: 1rem;
+    }
+
+    /* Horizontal scroll for destinations on mobile */
+    .destinations-grid-wrapper {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+    }
+
+    .destinations-grid-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .destinations-grid {
+        display: flex;
+        gap: 1.25rem;
+        padding-bottom: 1rem;
+        width: max-content;
+    }
+
+    .destinations-grid>* {
+        flex: 0 0 300px;
+        /* Strong peek effect */
+        scroll-snap-align: start;
+    }
+}
+
+
 
 /* Trust Partners Section */
 .trust-partners-grid {
