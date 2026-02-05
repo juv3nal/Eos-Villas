@@ -18,33 +18,35 @@ const LocalExperience = () => {
                 </button>
             </div>
 
-            <div className="experience-grid">
-                {experiences.map((exp) => (
-                    <div
-                        key={exp.id}
-                        className="experience-card"
-                        onClick={() => navigate(`/story/${exp.slug}`)}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        <div className="experience-image">
-                            <img src={exp.image} alt={exp.title} loading="lazy" />
-                            <div className="experience-tag">
-                                <Tag size={12} />
-                                {exp.category}
+            <div className="experience-grid-wrapper">
+                <div className="experience-grid">
+                    {experiences.map((exp) => (
+                        <div
+                            key={exp.id}
+                            className="experience-card"
+                            onClick={() => navigate(`/story/${exp.slug}`)}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <div className="experience-image">
+                                <img src={exp.image} alt={exp.title} loading="lazy" />
+                                <div className="experience-tag">
+                                    <Tag size={12} />
+                                    {exp.category}
+                                </div>
+                            </div>
+                            <div className="experience-content">
+                                <div className="experience-meta">
+                                    <Clock size={14} />
+                                    <span>{exp.readTime}</span>
+                                </div>
+                                <h3>{exp.title}</h3>
+                                <div className="read-more">
+                                    Read More <ArrowRight size={16} />
+                                </div>
                             </div>
                         </div>
-                        <div className="experience-content">
-                            <div className="experience-meta">
-                                <Clock size={14} />
-                                <span>{exp.readTime}</span>
-                            </div>
-                            <h3>{exp.title}</h3>
-                            <div className="read-more">
-                                Read More <ArrowRight size={16} />
-                            </div>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
     );

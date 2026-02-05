@@ -308,6 +308,149 @@
     }
 }
 
+/* Reviews Section */
+.reviews-section {
+    padding: 8rem 2rem;
+    background: var(--secondary);
+    color: white;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.reviews-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.reviews-header p {
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .reviews-section {
+        padding: 4rem 1rem;
+    }
+
+    .reviews-header {
+        margin-bottom: 2rem;
+    }
+
+    .reviews-header h2 {
+        font-size: 2rem;
+    }
+
+    .reviews-header p {
+        font-size: 1rem;
+    }
+
+    /* Horizontal scroll for reviews on mobile */
+    .reviews-grid-wrapper {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+    }
+
+    .reviews-grid-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .reviews-grid {
+        display: flex;
+        gap: 1.25rem;
+        padding-bottom: 1rem;
+        width: max-content;
+    }
+
+    .reviews-grid>* {
+        flex: 0 0 300px;
+        scroll-snap-align: start;
+    }
+}
+
+/* Partners Section */
+.partners-section {
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    padding: 6rem 2rem;
+}
+
+.newsletter-box {
+    background: var(--primary);
+    border-radius: var(--radius-lg);
+    padding: 4rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 40px rgba(255, 125, 0, 0.2);
+}
+
+.newsletter-box h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.newsletter-box p {
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .newsletter-section {
+        padding: 3rem 1rem;
+    }
+
+    .newsletter-box {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .newsletter-box h2 {
+        font-size: 1.75rem;
+    }
+
+    .newsletter-box p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form {
+        gap: 0.75rem;
+    }
+}
+
 /* Featured Properties Buttons Refinement */
 .home-page .btn-primary {
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);

@@ -124,27 +124,25 @@ function Home() {
             </div>
 
             {/* Guest Reviews */}
-            <section className="section" style={{ padding: '8rem 2rem', background: 'var(--secondary)', color: 'white' }}>
+            <section className="reviews-section">
                 <div className="container">
-                    <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                        <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem' }}>What Our Guests Say</h2>
-                        <p style={{ opacity: 0.8, fontSize: '1.1rem' }}>Authentic experiences from travelers who stayed with us.</p>
+                    <div className="reviews-header">
+                        <h2>What Our Guests Say</h2>
+                        <p>Authentic experiences from travelers who stayed with us.</p>
                     </div>
 
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                        gap: '2.5rem'
-                    }}>
-                        {reviews.map(review => (
-                            <ReviewCard key={review.id} {...review} />
-                        ))}
+                    <div className="reviews-grid-wrapper">
+                        <div className="reviews-grid">
+                            {reviews.map(review => (
+                                <ReviewCard key={review.id} {...review} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Partners & Trust */}
-            <section className="section" style={{ padding: '4rem 2rem', borderTop: '1px solid var(--border)' }}>
+            <section className="partners-section">
                 <div className="container">
                     <div className="trust-partners-grid">
                         <div className="trust-partner">
@@ -168,26 +166,12 @@ function Home() {
             </section>
 
             {/* Newsletter */}
-            <section className="section" style={{ padding: '6rem 2rem' }}>
+            <section className="newsletter-section">
                 <div className="container">
-                    <div style={{
-                        background: 'var(--primary)',
-                        borderRadius: 'var(--radius-lg)',
-                        padding: '4rem',
-                        textAlign: 'center',
-                        color: 'white',
-                        boxShadow: '0 20px 40px rgba(255, 125, 0, 0.2)'
-                    }}>
-                        <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>Stay Inspired</h2>
-                        <p style={{ marginBottom: '2.5rem', opacity: 0.9, fontSize: '1.1rem' }}>Subscribe to our newsletter for travel tips, exclusive offers and new property alerts.</p>
-                        <form className="newsletter-form" style={{
-                            display: 'flex',
-                            gap: '1rem',
-                            maxWidth: '600px',
-                            margin: '0 auto',
-                            flexWrap: 'wrap',
-                            justifyContent: 'center'
-                        }} onSubmit={(e) => e.preventDefault()}>
+                    <div className="newsletter-box">
+                        <h2>Stay Inspired</h2>
+                        <p>Subscribe to our newsletter for travel tips, exclusive offers and new property alerts.</p>
+                        <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
                             <input
                                 type="email"
                                 placeholder="Your email address"

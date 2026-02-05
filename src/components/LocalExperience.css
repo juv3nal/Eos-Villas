@@ -161,13 +161,67 @@
 }
 
 @media (max-width: 768px) {
+    .local-experience-section {
+        padding: 4rem 1rem;
+    }
+
     .section-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 2rem;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.8rem;
     }
 
     .section-title {
-        font-size: 2.25rem;
+        font-size: 2rem;
+    }
+
+    .view-all-btn {
+        font-size: 0.95rem;
+        padding: 0.25rem 0;
+    }
+
+    /* Horizontal scroll for experiences on mobile */
+    .experience-grid-wrapper {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+    }
+
+    .experience-grid-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .experience-grid {
+        display: flex;
+        gap: 1.25rem;
+        padding-bottom: 1rem;
+        width: max-content;
+        margin-top: 0;
+    }
+
+    .experience-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+
+    .experience-image {
+        height: 180px;
+    }
+
+    .experience-content {
+        padding: 1.5rem;
+    }
+
+    .experience-content h3 {
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
     }
 }

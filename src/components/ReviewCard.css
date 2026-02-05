@@ -82,3 +82,37 @@
     font-weight: 700;
     color: var(--secondary);
 }
+
+@media (max-width: 768px) {
+    .review-card {
+        padding: 2rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .quote-icon {
+        width: 32px;
+        height: 32px;
+        left: 20px;
+        font-size: 1.25rem;
+    }
+
+    .review-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .author-info h5 {
+        font-size: 1rem;
+    }
+
+    .author-info span {
+        font-size: 0.75rem;
+    }
+
+    .review-footer {
+        border-top-color: rgba(0, 0, 0, 0.05);
+        /* Softer divider on mobile */
+        padding-top: 1rem;
+        font-size: 0.75rem;
+    }
+}
