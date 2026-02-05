@@ -12,6 +12,7 @@ function Search() {
     const queryParams = new URLSearchParams(search);
     const query = queryParams.get('q')?.toLowerCase() || '';
     const showLastMinuteOnly = queryParams.get('lastMinute') === 'true';
+    const themeFilter = queryParams.get('theme');
 
     const [filters, setFilters] = useState({
         types: [],
@@ -48,6 +49,11 @@ function Search() {
             results = results.filter(p => p.lastMinute === true);
         }
 
+        // Apply Theme Filter
+        if (themeFilter) {
+            results = results.filter(p => p.themes?.includes(themeFilter));
+        }
+
         // Apply Filters
         results = results.filter(prop => {
             // Price filter
@@ -79,17 +85,37 @@ function Search() {
         setFilters(newFilters);
     };
 
+    const getThemeTitle = (theme) => {
+        const themes = {
+            'couples': 'Couples Retreats',
+            'family': 'Family Holidays',
+            'beach': 'Beach & Sun Stays',
+            'active': 'Active & Adventure',
+            'group': 'Group Getaways',
+            'remote': 'Remote & Tranquil Hideaways'
+        };
+        return themes[theme] || 'Themed Stays';
+    };
+
     return (
         <div className="search-page">
             <div className="container">
                 <header className="search-header">
                     <div className="search-info">
                         <h1>
-                            {showLastMinuteOnly ? 'Last Minute Offers' : (query ? `Results for "${query}"` : 'All Properties')}
+                            {themeFilter ? getThemeTitle(themeFilter) : (showLastMinuteOnly ? 'Last Minute Offers' : (query ? `Results for "${query}"` : 'All Properties'))}
                         </h1>
-                        <p className="results-count">
-                            {filteredResults.length} {filteredResults.length === 1 ? 'property' : 'properties'} found
-                        </p>
+                        <div className="results-meta">
+                            <span className="results-count">
+                                {filteredResults.length} {filteredResults.length === 1 ? 'property' : 'properties'} found
+                            </span>
+                            {themeFilter && (
+                                <Link to="/search" className="clear-theme-filter">
+                                    <Info size={14} />
+                                    Holiday style: {getThemeTitle(themeFilter)} <span>✕</span>
+                                </Link>
+                            )}
+                        </div>
                     </div>
                 </header>
 

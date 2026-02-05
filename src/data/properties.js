@@ -18,6 +18,8 @@ export const properties = [
         discountPercent: 20,
         offerEndsAt: "2026-03-05",
         minNights: 5,
+        themes: ["family", "beach"],
+        mainThemeLabel: "Great for families",
         description: "A beautiful traditional villa located in the heart of Saint Stephanos, offering stunning sea views and modern amenities. Perfect for families looking for a relaxing getaway near the Ionian Sea."
     },
     {
@@ -62,6 +64,8 @@ export const properties = [
         discountPercent: 20,
         offerEndsAt: "2026-03-15",
         minNights: 4,
+        themes: ["couples", "remote"],
+        mainThemeLabel: "Romantic & Historic",
         description: "A historic mansion in the heart of Corfu Town. Experience the elegance of Venetian architecture combined with modern luxury. Just steps away from the Liston and Spianada."
     },
     {
@@ -116,6 +120,8 @@ export const properties = [
         image: "https://www.eostravel.com/images/14998/Local/thumbs/32678.jpg",
         type: "Villa",
         amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: true },
+        themes: ["family", "active"],
+        mainThemeLabel: "Ideal for active families",
         description: "Spacious family villa with large gardens and a private pool. Pet-friendly and perfect for groups looking for privacy near Gouvia Marina."
     },
     {
@@ -153,6 +159,8 @@ export const properties = [
         discountPercent: 22,
         offerEndsAt: "2026-02-20",
         minNights: 3,
+        themes: ["couples", "remote"],
+        mainThemeLabel: "Tranquil retreat",
         description: "Cozy Paxian villa nestled among olive groves. Enjoy peace and tranquility just a short drive from the harbor of Gaios."
     },
     {
@@ -250,6 +258,8 @@ export const properties = [
         image: "https://www.eostravel.com/images/15490/Local/thumbs/42514.jpg",
         type: "Villa",
         amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false },
+        themes: ["active", "group"],
+        mainThemeLabel: "Golf & Luxury",
         description: "Sophisticated modern villa in the heart of Vilamoura. Steps away from championship golf courses and the luxury marina."
     },
     {
@@ -266,6 +276,8 @@ export const properties = [
         image: "https://www.eostravel.com/images/15394/Local/thumbs/36123.jpg",
         type: "Apartment",
         amenities: { wifi: true, pool: true, ac: true, parking: false, waterfront: true, pets: false },
+        themes: ["beach", "couples"],
+        mainThemeLabel: "Steps from the beach",
         description: "Stunning beachside apartment in Quarteira. Enjoy morning coffees with the sound of the Atlantic waves."
     },
     {
@@ -298,6 +310,8 @@ export const properties = [
         image: "https://www.eostravel.com/images/15533/Local/thumbs/44897.jpg",
         type: "Villa",
         amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false },
+        themes: ["group", "family"],
+        mainThemeLabel: "Perfect for large groups",
         description: "Experience the ultimate Algarve retreat at Novo Amanha. Spacious, airy, and perfect for large family gatherings."
     },
     {
@@ -546,6 +560,8 @@ export const properties = [
             inside: ["Aircon", "Hairdryer", "Wi-Fi Internet", "Fridge/Freezer", "Microwave", "Washing machine", "TV", "Coffee Machine", "Safe"],
             outside: ["Private Pool", "Shaded terrace", "Barbecue", "Outdoor Dining", "Sunloungers", "Private Parking"]
         },
+        themes: ["couples", "remote"],
+        mainThemeLabel: "Romantic Hideaway",
         description: "Escape to romance and relaxation at our secluded Frigiliana villa for two. The villa features a private pool and a spacious terrace that offers breathtaking panoramic views of the Andalusian countryside and the Mediterranean Sea. Nestled amidst the rolling hills of Andalusia, this charming hideaway is designed for two and offers breathtaking panoramic views.",
         reviews: [
             { id: 1, author: "Andreas I.", content: "Wonderful stay, beatyful flat, new Equipment, nice Pool, nothing to be complaint!!", rating: 5, date: "Oct 2025" },
@@ -738,6 +754,8 @@ export const properties = [
                 "Bed Linen & Bath Towels Included", "Pool Maintenance", "24/7 Local Concierge"
             ]
         },
+        themes: ["beach", "family"],
+        mainThemeLabel: "Beachside Family Fun",
         description: "Latchi Aria, a splendid Cyprus villa with a private pool, nestled gracefully within the quaint village of Latchi. This idyllic holiday retreat is ideally situated in close proximity to local bars, tavernas, Latchi Beach, and the azure sea. Boasts an inviting 8 x 4m private swimming pool, complete with a spacious terrace and thoughtfully appointed outdoor furniture.",
         specs: { size: "150m²", distToBeach: "0.4km", distToTown: "0.2km" },
         seasonalRates: [
@@ -801,6 +819,8 @@ export const properties = [
         ],
         type: "Villa",
         amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false, bbq: true, kitchen: true },
+        themes: ["family", "group"],
+        mainThemeLabel: "Large Family Estate",
         description: "Welcome to this spacious Algarve villa, the perfect retreat for families and friends seeking comfort and relaxation. Accommodating up to 8 guests in four beautifully appointed bedrooms, with the option to host an additional 4 adults. Combines luxury with charm, featuring a large heated swimming pool, private garden, and outdoor amenities including a traditional pizza oven and barbecue.",
         specs: { size: "300m²", distToBeach: "0.48km", distToTown: "3.6km" },
         seasonalRates: [

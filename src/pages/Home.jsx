@@ -11,6 +11,7 @@ import { reviews } from '../data/reviews'
 import TrustBadges from '../components/TrustBadges'
 import LocalExperience from '../components/LocalExperience'
 import LastMinuteOffersSection from '../components/LastMinuteOffersSection'
+import HolidayStylesSection from '../components/HolidayStylesSection'
 import './Home.css'
 
 const HERO_IMAGES = [
@@ -68,6 +69,9 @@ function Home() {
                 </div>
                 <TrustBadges />
             </section>
+
+            {/* Holiday Styles */}
+            <HolidayStylesSection />
 
             {/* Featured Destinations */}
             <section className="section bg-light" style={{ padding: '8rem 2rem', background: 'var(--surface-muted)' }}>

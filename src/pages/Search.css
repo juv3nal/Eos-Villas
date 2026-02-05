@@ -23,6 +23,39 @@
     font-weight: 500;
 }
 
+.results-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.clear-theme-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid var(--primary);
+}
+
+.clear-theme-filter:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.clear-theme-filter span {
+    margin-left: 4px;
+    font-size: 1.1rem;
+    line-height: 0;
+}
+
 
 .no-results {
     padding: 6rem 0;

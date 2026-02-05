@@ -5,7 +5,8 @@ import './PropertyCard.css'
 
 const PropertyCard = ({
     id, name, location, price, guests, bedrooms, bathrooms, rating = 5.0, image, badges = [],
-    lastMinute = false, discountPercent, originalPrice, offerEndsAt, minNights
+    lastMinute = false, discountPercent, originalPrice, offerEndsAt, minNights,
+    mainThemeLabel
 }) => {
     const navigate = useNavigate();
 
@@ -68,6 +69,11 @@ const PropertyCard = ({
                             <Star size={12} fill="currentColor" />
                             <span>{rating || 5.0} Review Score</span>
                         </div>
+                        {mainThemeLabel && (
+                            <div className="theme-label">
+                                {mainThemeLabel}
+                            </div>
+                        )}
                         <h3 title={name}>{name}</h3>
                         <p className="location-text">
                             <MapPin size={14} />
