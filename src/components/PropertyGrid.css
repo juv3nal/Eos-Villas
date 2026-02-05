@@ -1,0 +1,34 @@
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.grid-item {
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+@media (min-width: 1400px) {
+    .property-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .property-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .property-grid {
+        grid-template-columns: 1fr;
+    }
+}

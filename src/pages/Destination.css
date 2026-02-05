@@ -1,0 +1,165 @@
+.destination-page {
+    background-color: #fafbfc;
+}
+
+.destination-content {
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
+    /* Overlap with hero */
+}
+
+.seo-intro-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    margin-bottom: 3rem;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.description-text {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.destination-stats-card {
+    background: white;
+    border: 1px solid #edf2f7;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.stat-divider {
+    height: 1px;
+    background: #edf2f7;
+    margin: 1.5rem 0;
+}
+
+.sticky-filters {
+    position: sticky;
+    top: 100px;
+    z-index: 10;
+}
+
+.property-listings {
+    display: flex;
+    flex-wrap: wrap;
+    /* Fallback */
+}
+
+.highlights-section {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.icon-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.highlight-item {
+    padding: 1.5rem;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.highlight-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.highlight-item:hover .icon-box {
+    background: var(--primary);
+    transform: scale(1.1) rotate(5deg);
+    border-color: transparent;
+}
+
+@media (max-width: 991px) {
+    .destination-content {
+        margin-top: -30px;
+    }
+
+    .seo-intro-card {
+        padding: 2rem;
+    }
+
+    .highlights-section {
+        text-align: center;
+    }
+
+    .highlight-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .sticky-filters {
+        position: static;
+        margin-bottom: 2rem;
+    }
+}
+
+/* View Toggle Styles */
+.btn-white {
+    background: white;
+    color: var(--secondary);
+    border: none;
+}
+
+.btn-white.active {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-ghost {
+    background: transparent;
+    border: none;
+    color: #6c757d;
+}
+
+.btn-ghost:hover {
+    color: var(--primary);
+}
+
+.property-listings {
+    display: block;
+    width: 100%;
+}
+
+.gap-3 {
+    gap: 1rem;
+}

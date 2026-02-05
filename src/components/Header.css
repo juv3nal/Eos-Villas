@@ -1,0 +1,243 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1.25rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.header.scrolled {
+    padding: 0.75rem 0;
+    border-bottom-color: var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
+.logo img {
+    display: block;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.nav-desktop {
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: white;
+    min-width: 180px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    list-style: none;
+    padding: 0.75rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border);
+}
+
+.has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+.dropdown li a:hover {
+    background: var(--surface-muted);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-btn {
+    color: var(--text);
+    padding: 0.5rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+    background: var(--surface-muted);
+    color: var(--primary);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-container form {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.search-container.open form {
+    width: 200px;
+    margin-right: 0.5rem;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface-muted);
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: var(--primary);
+    background: white;
+}
+
+.mobile-toggle {
+    display: none;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: white;
+    height: 0;
+    overflow-y: auto;
+    transition: height 0.3s ease;
+    box-shadow: var(--shadow-lg);
+}
+
+.mobile-menu.open {
+    height: calc(100vh - 72px);
+}
+
+.mobile-search {
+    padding: 1.5rem 2rem 0.5rem;
+}
+
+.mobile-search form {
+    display: flex;
+    align-items: center;
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.75rem;
+}
+
+.mobile-search input {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.mobile-search svg {
+    color: var(--text-muted);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mobile-nav-links a {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0.5rem 0;
+}
+
+.hide-mobile {
+    display: flex;
+}
+
+@media (max-width: 992px) {
+
+    .nav-desktop,
+    .hide-mobile {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+}

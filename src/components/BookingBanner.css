@@ -1,0 +1,114 @@
+.booking-banner-section {
+    padding: 6rem 2rem;
+}
+
+.banner-intro-text {
+    font-size: 1.5rem;
+    color: var(--secondary, #333);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.booking-card {
+    background: #ffffff;
+    border: 1px solid #eef0f5;
+    border-radius: 20px;
+    padding: 4rem;
+    color: var(--text-main, #333);
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+}
+
+.booking-card-content {
+    max-width: 90%;
+}
+
+.booking-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+    color: var(--secondary, #1a2b49);
+}
+
+.booking-body {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-muted, #555);
+}
+
+.booking-highlight {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--secondary, #1a2b49);
+}
+
+.booking-body p {
+    margin-bottom: 1.5rem;
+}
+
+.booking-footer {
+    padding-top: 2rem;
+    border-top: 1px solid #f0f0f0;
+    font-weight: 600;
+    color: var(--secondary, #1a2b49);
+}
+
+.booking-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn-learn-more {
+    background-color: var(--primary) !important;
+    color: white !important;
+    padding: 1.1rem 3rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    text-transform: none !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    box-shadow: 0 10px 20px rgba(255, 125, 0, 0.2);
+}
+
+.btn-learn-more:hover {
+    background-color: var(--primary-dark) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 125, 0, 0.3);
+}
+
+@media (max-width: 992px) {
+    .booking-title {
+        font-size: 2.5rem;
+    }
+
+    .booking-card {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-title {
+        font-size: 2rem;
+    }
+
+    .booking-card {
+        padding: 2rem;
+    }
+
+    .booking-body {
+        font-size: 1.05rem;
+    }
+
+    .banner-intro-text {
+        font-size: 1.25rem;
+        text-align: left;
+    }
+}

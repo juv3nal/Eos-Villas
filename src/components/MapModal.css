@@ -1,0 +1,109 @@
+.map-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 18, 32, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.map-modal-container {
+    background: white;
+    width: 100%;
+    max-width: 1000px;
+    height: 80vh;
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-modal-header {
+    padding: 1.5rem 2rem;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.map-modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--secondary);
+}
+
+.close-button {
+    background: var(--surface-muted);
+    border: none;
+    color: var(--text);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-button:hover {
+    background: var(--primary);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.map-modal-body {
+    flex: 1;
+    background: #f0f0f0;
+    position: relative;
+}
+
+.map-modal-body iframe {
+    filter: grayscale(0.2) contrast(1.1);
+    /* Slight styling to match brand aesthetic */
+}
+
+.map-modal-footer {
+    padding: 1rem 2rem;
+    background: var(--surface-muted);
+    border-top: 1px solid var(--border);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .map-modal-overlay {
+        padding: 1rem;
+    }
+
+    .map-modal-container {
+        height: 90vh;
+    }
+}

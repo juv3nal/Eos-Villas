@@ -1,0 +1,111 @@
+.home-page .section-subtitle {
+    transition: color 0.3s ease;
+}
+
+.home-page .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.home-page .link-arrow:hover {
+    color: var(--primary-dark) !important;
+    transform: translateX(8px);
+}
+
+.newsletter-subscribe-btn {
+    background: var(--secondary);
+    color: white;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 4px 12px rgba(27, 59, 90, 0.15);
+}
+
+.newsletter-subscribe-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Trust Partners Section */
+.trust-partners-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.trust-partner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--secondary);
+    opacity: 0.5;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    filter: grayscale(1);
+}
+
+.trust-partner:hover {
+    opacity: 1;
+    filter: grayscale(0);
+    transform: translateY(-3px);
+    color: var(--primary);
+}
+
+.trust-partner span {
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+    .trust-partners-grid {
+        gap: 2.5rem;
+    }
+
+    .trust-partner {
+        gap: 0.75rem;
+    }
+
+    .trust-partner span {
+        font-size: 0.85rem;
+    }
+}
+
+.newsletter-input {
+    flex: 1;
+    min-width: 280px;
+    padding: 1.25rem 2rem;
+    border-radius: var(--radius-md);
+    border: none;
+    background: white !important;
+    color: var(--secondary) !important;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Featured Properties Buttons Refinement */
+.home-page .btn-primary {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.home-page .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(255, 125, 0, 0.4);
+}
