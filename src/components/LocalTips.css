@@ -1,0 +1,153 @@
+.local-tips-container {
+    padding: 3rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    margin-top: 3rem;
+}
+
+.local-tips-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.local-tips-header .header-icon {
+    color: var(--primary);
+}
+
+.local-tips-header h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin: 0;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tips-card {
+    background: var(--surface-muted);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tips-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.tips-card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tips-card-title svg {
+    color: var(--primary);
+}
+
+.tips-card-title h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin: 0;
+}
+
+.car-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    margin-left: auto;
+}
+
+.badge-recommended {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.badge-optional {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-not-needed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.tips-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.ideal-tag {
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--secondary);
+    border: 1px solid var(--border);
+}
+
+.nearby-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.nearby-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nearby-label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--secondary);
+}
+
+.nearby-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .local-tips-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .local-tips-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .car-badge {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+}

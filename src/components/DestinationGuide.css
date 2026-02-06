@@ -1,0 +1,249 @@
+.destination-guide {
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 4rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.guide-hero {
+    background: var(--surface-muted);
+    padding: 3rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.guide-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--secondary);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.guide-hero h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.guide-summary {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.guide-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.highlight-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--secondary);
+    border: 1px solid var(--border);
+}
+
+.highlight-tag svg {
+    color: #10b981;
+    /* Success green */
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 0;
+}
+
+.guide-essential {
+    padding: 3rem;
+    border-right: 1px solid var(--border);
+}
+
+.guide-itineraries {
+    padding: 3rem;
+    background: var(--surface-muted);
+    opacity: 0.95;
+}
+
+.guide-section {
+    margin-bottom: 2.5rem;
+}
+
+.guide-section h3,
+.guide-itineraries h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.bullet-list {
+    list-style: none;
+    padding: 0;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.info-box {
+    background: var(--surface-muted);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-box p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.guide-section-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.info-card h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.itinerary-block {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.itinerary-block h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.itinerary-list {
+    list-style: none;
+    padding: 0;
+}
+
+.itinerary-list li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    padding-bottom: 0.75rem;
+    border-left: 2px solid var(--border);
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.itinerary-list li::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0.25rem;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.itinerary-list li:last-child {
+    border-left: none;
+    padding-bottom: 0;
+}
+
+@media (max-width: 992px) {
+    .guide-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-essential {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+@media (max-width: 768px) {
+    .guide-hero {
+        padding: 2rem 1.5rem;
+    }
+
+    .guide-hero h2 {
+        font-size: 1.75rem;
+    }
+
+    .guide-summary {
+        font-size: 1rem;
+    }
+
+    .guide-essential,
+    .guide-itineraries {
+        padding: 2rem 1.5rem;
+    }
+
+    .guide-section-row {
+        grid-template-columns: 1fr;
+    }
+}

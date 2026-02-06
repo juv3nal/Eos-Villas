@@ -1,17 +1,18 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { Users, Bed, Bath, Star, MapPin, Award, BookOpen, Leaf, ShieldCheck } from 'lucide-react'
 import './PropertyCard.css'
 
 const PropertyCard = ({
     id, name, location, price, guests, bedrooms, bathrooms, rating = 5.0, image, badges = [],
     lastMinute = false, discountPercent, originalPrice, offerEndsAt, minNights,
-    mainThemeLabel
+    mainThemeLabel, slug
 }) => {
     const navigate = useNavigate();
 
     const handleCardClick = () => {
-        navigate(`/property/${id}`);
+        const path = slug ? `/villa/${slug}` : `/property/${id}`;
+        navigate(path);
     };
 
     const getBadgeIcon = (badge) => {
@@ -97,9 +98,9 @@ const PropertyCard = ({
                     </div>
 
                     <div className="card-footer">
-                        <div className="details-link">
-                            {lastMinute ? 'View offer' : 'Discover'}
-                        </div>
+                        <Link to={`/villa/${slug}`} className="details-link">
+                            {lastMinute ? 'View Offer' : 'Discover'}
+                        </Link>
                     </div>
                 </div>
             </div>

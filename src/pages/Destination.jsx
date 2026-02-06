@@ -18,6 +18,8 @@ import {
     Music, ShoppingBag, Shield,
     Umbrella, Mountain
 } from 'lucide-react'
+import { getDestinationGuide } from '../content'
+import DestinationGuide from '../components/DestinationGuide'
 import './Destination.css'
 
 // Helper to resolve icon string to component
@@ -34,6 +36,7 @@ const IconMap = {
 function Destination() {
     const { area } = useParams();
     const areaKey = area.toLowerCase();
+    const guideData = useMemo(() => getDestinationGuide(areaKey), [areaKey]);
     const [isMapOpen, setIsMapOpen] = useState(false);
     const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'carousel'
     const [sortBy, setSortBy] = useState('Recommended');
@@ -157,6 +160,9 @@ function Destination() {
             />
 
             <div className="destination-content container">
+                {/* Destination Guide Block */}
+                {guideData && <DestinationGuide guide={guideData} />}
+
                 {/* SEO & Intro Section */}
                 <div className="seo-intro-card">
                     <div className="row align-items-center">

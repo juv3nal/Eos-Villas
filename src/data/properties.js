@@ -569,7 +569,7 @@ export const properties = [
         ]
     },
     // Missing Costa Del Sol Properties to match live site (Total 27)
-    { id: 1176, name: "Sara Sol", destination: "Costa Del Sol", location: "Nerja, Costa Del Sol", price: 97, guests: "2", bedrooms: 1, bathrooms: 1, rating: 4.8, badges: [], type: "Villa", image: "https://www.eostravel.com/images/home/CostaDelSol.jpg", amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false } },
+    { id: 1176, name: "Sara Sol", slug: "sara-sol", destination: "Costa Del Sol", location: "Nerja, Costa Del Sol", price: 97, guests: "2", bedrooms: 1, bathrooms: 1, rating: 4.8, badges: [], type: "Villa", image: "https://www.eostravel.com/images/home/CostaDelSol.jpg", amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false } },
     { id: 1224, name: "Casa Jorge", destination: "Costa Del Sol", location: "Frigiliana, Costa Del Sol", price: 188, guests: "4", bedrooms: 2, bathrooms: 1, rating: 4.9, badges: [], type: "Villa", image: "https://www.eostravel.com/images/home/CostaDelSol.jpg", amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false } },
     { id: 1088, name: "La Imaroga", destination: "Costa Del Sol", location: "Frigiliana, Costa Del Sol", price: 552, guests: "8", bedrooms: 4, bathrooms: 3, rating: 5.0, badges: ["Premium"], type: "Villa", image: "https://www.eostravel.com/images/home/CostaDelSol.jpg", amenities: { wifi: true, pool: true, ac: true, parking: true, waterfront: false, pets: false } },
     {

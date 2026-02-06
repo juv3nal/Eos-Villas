@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Destination from './pages/Destination'
 import Destinations from './pages/Destinations'
 import PropertyDetail from './pages/PropertyDetail'
+import VillaDetailPage from './pages/VillaDetailPage'
 import Search from './pages/Search'
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
           <Route path="/destination/:area" element={<Destination />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/property/:id" element={<PropertyDetail />} />
-          <Route path="/villa/:slug" element={<PropertyDetail />} />
+          <Route path="/villa/:slug" element={<VillaDetailPage />} />
           <Route path="/search" element={<Search />} />
         </Routes>
       </main>

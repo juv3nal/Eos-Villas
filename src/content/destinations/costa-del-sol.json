@@ -1,0 +1,42 @@
+{
+    "slug": "costa-del-sol",
+    "title": "Nerja & Costa del Sol at a glance",
+    "summary": "The eastern Costa del Sol, centred around the charming town of Nerja, offers a more authentic Spanish experience than the high-rise resorts further west. Here, rugged cliffs meet sandy coves, and the whitewashed villages of the Axarquía mountains provide a stunning backdrop to your Mediterranean holiday.",
+    "highlights": [
+        "Balcón de Europa views",
+        "Cueva de Nerja (Nerja Caves)",
+        "Burriana Beach tapas",
+        "Frigiliana whitewashed streets"
+    ],
+    "whoItSuits": [
+        "Families looking for safe, sandy beaches and relaxed dining.",
+        "Couples seeking romantic sunset spots and authentic Spanish charm.",
+        "Outdoor enthusiasts who enjoy coastal hikes and mountain trails."
+    ],
+    "gettingThere": "The nearest gateway is Málaga Airport (AGP), approximately 50 minutes' drive from Nerja. Most international airlines operate daily flights from major UK and European cities.",
+    "gettingAround": "Whilst Nerja itself is very walkable, hiring a car is highly recommended to explore the hidden coves and mountain villages like Frigiliana and Competa.",
+    "bestTimeToVisit": "May to June and September to October offer perfect temperatures for exploring. July and August are the hottest months, ideal for dedicated beach lovers.",
+    "goodToKnow": "Most shops observe a traditional siesta between 2pm and 5pm. Tapas is often served free with drinks in many local bars in the Axarquía region.",
+    "itineraries": [
+        {
+            "title": "A Perfect 3 Days in Nerja",
+            "days": 3,
+            "bullets": [
+                "Day 1: Breakfast at Balcón de Europa, lunch at Burriana Beach, and a sunset stroll.",
+                "Day 2: Morning visit to the Nerja Caves, afternoon in the hilltop village of Frigiliana.",
+                "Day 3: Coastal hike to Maro beach and a farewell seafood dinner at the Plaza de los Cangrejos."
+            ]
+        },
+        {
+            "title": "The 7-Day Relax & Explore Itinerary",
+            "days": 7,
+            "bullets": [
+                "Days 1-3: Settle into Nerja, beach time, and local town exploration.",
+                "Day 4: Day trip to Málaga city for the Picasso Museum and the Alcazaba.",
+                "Day 5: Drive through the Axarquía mountains and try local sweet wine in Competa.",
+                "Day 6: Boat trip along the Maro-Cerro Gordo cliffs.",
+                "Day 7: Last-minute souvenir shopping and a long Spanish 'sobremesa' lunch."
+            ]
+        }
+    ]
+}

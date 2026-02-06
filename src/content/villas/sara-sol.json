@@ -1,0 +1,27 @@
+{
+    "slug": "sara-sol",
+    "aroundYourVilla": "Villa Sara Sol is perfectly positioned in the quiet Capistrano Village area of Nerja. You are tucked away from the main town bustle but close enough to enjoy all the amenities. A local grocery store and several excellent cafe-bars are within a 10-minute walk.",
+    "needACar": {
+        "level": "optional",
+        "text": "Whilst there is a regular local bus service to the town centre and beaches, we suggest a car for easier supermarket trips and exploring the wider region."
+    },
+    "idealFor": [
+        "Quiet family holidays",
+        "Garden lovers (the private terrace is a highlight)",
+        "Guests who prefer a residential feel over resort hotels"
+    ],
+    "nearby": [
+        {
+            "label": "Burriana Beach",
+            "note": "A 5-minute drive or a 20-minute downhill walk. Famous for its beachside paella."
+        },
+        {
+            "label": "Nerja Town Centre",
+            "note": "About 2km away. Plenty of taxis are available if you want to enjoy a glass of Rioja in town."
+        },
+        {
+            "label": "Local Supermarket",
+            "note": "Carrefour Express is just a 2-minute drive away for all your holiday essentials."
+        }
+    ]
+}
