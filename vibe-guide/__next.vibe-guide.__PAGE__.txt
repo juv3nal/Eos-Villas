@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[47257,["/Eos-Villas/_next/static/chunks/ff1a16fafef87110.js","/Eos-Villas/_next/static/chunks/d2be314c3ece3fbe.js"],"ClientPageRoot"]
+3:I[22353,["/Eos-Villas/_next/static/chunks/52a0dab4fdb5a860.js","/Eos-Villas/_next/static/chunks/f69b51a53b7c4290.js","/Eos-Villas/_next/static/chunks/1fd80f837b492e73.js","/Eos-Villas/_next/static/chunks/4a62e776f0c17f4c.js","/Eos-Villas/_next/static/chunks/d16c777cd6c8bd2e.js"],"default"]
+6:I[97367,["/Eos-Villas/_next/static/chunks/ff1a16fafef87110.js","/Eos-Villas/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"buildId":"WV4kVBuvKgQZ8HwABtL2U","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/Eos-Villas/_next/static/chunks/f69b51a53b7c4290.js","async":true}],["$","script","script-1",{"src":"/Eos-Villas/_next/static/chunks/1fd80f837b492e73.js","async":true}],["$","script","script-2",{"src":"/Eos-Villas/_next/static/chunks/4a62e776f0c17f4c.js","async":true}],["$","script","script-3",{"src":"/Eos-Villas/_next/static/chunks/d16c777cd6c8bd2e.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+4:{}
+5:{}
+8:null
